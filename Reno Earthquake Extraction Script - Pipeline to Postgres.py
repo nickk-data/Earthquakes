@@ -57,12 +57,11 @@ try:
             'place': properties.get('place'),
         }
 
-        # Ensure that only the necessary columns are being inserted
+        # sql
         keys = ", ".join(earthquake_data.keys())
         values = ", ".join(["%s"] * len(earthquake_data))
         sql = (f'INSERT INTO Reno ({keys}) VALUES ({values})')
 
-        # Execute the query
         cursor.execute(sql, list(earthquake_data.values()))
 
     # Commit the transaction
