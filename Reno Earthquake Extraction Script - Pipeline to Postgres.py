@@ -55,6 +55,7 @@ try:
             'depth_km': geometry[2],
             'magnitude': properties.get('mag'),
             'place': properties.get('place'),
+            'insert_date_time': datetime.now(),
         }
 
         # sql
