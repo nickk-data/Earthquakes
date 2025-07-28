@@ -1,6 +1,6 @@
 PostgreSQL Table Upload to Render via PowerShell
 
-This log outlines the PowerShell commands used to upload a local PostgreSQL table (reno from Earthquakes database) to a Render.com PostgreSQL service on Windows. Filepaths, usernames, and passwords have been dummied.
+This log outlines the PowerShell commands used to upload a local PostgreSQL table (reno from Earthquakes database) to a Render.com PostgreSQL service. Filepaths, usernames, and passwords have been dummied.
 
 1. Local Database Dump
 
