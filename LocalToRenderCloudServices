@@ -1,0 +1,26 @@
+PostgreSQL Table Upload to Render via PowerShell
+
+This log outlines the PowerShell commands used to upload a local PostgreSQL table (reno from Earthquakes database) to a Render.com PostgreSQL service on Windows. Filepaths, usernames, and passwords have been dummied.
+
+1. Local Database Dump
+
+pg_dump -U postgres -d earthquakes -t reno > C:\Users\nick\Documents\Projects\Earthquakes\reno_dump.sql
+
+2. Render Database Import
+
+$env:PGPASSWORD="my_render_password"
+psql -h hostname-a.oregon-postgres.render.com -p 5432 -U myuser -d mydatabase -f C:\Users\nick\Documents\Projects\Earthquakes\reno_dump.sql
+
+Note: This command required entering the Render database password when prompted by psql. The reno_dump.sql file also needed to be saved as UTF-8 (without BOM) after the initial dump to prevent encoding errors during import.
+
+Result:
+The command executed without any errors, indicating a successful import of the reno table into the Render PostgreSQL database.
+
+Verification Steps (Post-Import)
+To verify the data, connect to the Render database interactively:
+
+psql -h hostname-a.oregon-postgres.render.com -p 5432 -U myuser -d mydatabase
+
+\dt
+SELECT * FROM reno LIMIT 5;
+SELECT COUNT(*) FROM reno;
