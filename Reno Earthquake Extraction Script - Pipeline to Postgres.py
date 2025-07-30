@@ -49,7 +49,7 @@ try:
 
         # Fields
         earthquake_data = {
-            'time': datetime.utcfromtimestamp(properties.get('time') / 1000),  # Convert from ms to seconds
+            'time': datetime.(properties.get('time') / 1000),  # Convert from ms to seconds
             'latitude': geometry[1],  # Geometry stores [longitude, latitude]
             'longitude': geometry[0],
             'depth_km': geometry[2],
