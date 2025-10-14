@@ -1,0 +1,1 @@
+The original column name 'time' comes directly from the USGS API and I did not modify it during the API call. I chose to convert the time field from UTC 24HR to Pacific Time 12HR as in this project all locations are located in the Pacific Timezone. If this were a real working environment with earthquake data from around the country or world, I would leave the UTC format in place.

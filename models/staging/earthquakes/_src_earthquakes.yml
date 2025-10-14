@@ -1,0 +1,14 @@
+sources:
+  - name: earthquakes
+    database: Earthquakes
+    schema: PUBLIC
+    tables:
+      - name: LosAngeles
+
+      - name: Portland
+
+      - name: Reno
+
+      - name: SanFrancisco
+
+      - name: Seattle
