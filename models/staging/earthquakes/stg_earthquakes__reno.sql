@@ -5,11 +5,11 @@ with source as (
 
 convert_to_pacific as (
     select
-        time, -- original column name is 'time' from the usgs api
+        time,
         magnitude,
         depth_km,
         place,
-        convert_timezone('UTC', 'America/Los_Angeles', time) as pacific_timestamp -- chose pacific time since all locations are west coast
+        convert_timezone('UTC', 'America/Los_Angeles', time) as pacific_timestamp
 
     from source
 ),
